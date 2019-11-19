@@ -22,7 +22,7 @@ void main() {
   test('should get leads by ID from the repository', () async {
     when(mockLeadRepository.getLeadFromId(any))
         .thenAnswer((_) async => Right(tLead));
-    final result = await usecase.execute(id: tId);
+    final result = await usecase(Params(id: tId));
 
     expect(result, Right(tLead));
     verify(mockLeadRepository.getLeadFromId(tId));
