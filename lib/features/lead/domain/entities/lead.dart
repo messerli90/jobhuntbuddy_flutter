@@ -2,28 +2,28 @@ import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 class Lead extends Equatable {
-  final int id;
+  final String uid;
   final String companyName;
   final String jobTitle;
   final String status;
   final String companyWebsite;
-  final String listingWebsite;
+  final String listingUrl;
   final String contactName;
   final String contactEmail;
   final String notes;
 
   Lead({
-    @required this.id,
+    @required this.uid,
     @required this.companyName,
     this.jobTitle,
     this.status,
     this.companyWebsite,
-    this.listingWebsite,
+    this.listingUrl,
     this.contactName,
     this.contactEmail,
     this.notes,
   }) : super([
-          id,
+          uid,
           companyName
         ]);
 }

@@ -17,7 +17,7 @@ void main() {
   });
 
   final tId = 1;
-  final tLead = Lead(id: 1, companyName: 'Hooli');
+  final tLead = Lead(uid: 'abc', companyName: 'Hooli');
 
   test('should get leads by ID from the repository', () async {
     when(mockLeadRepository.getLeadFromId(any))

@@ -1,0 +1,32 @@
+[
+  {
+    "uid": "abc",
+    "companyName": "Hooli",
+    "status": "application-sent",
+    "jobTitle": "Sr. Life Coach",
+    "companyWebsite": "https://hooli.xyz",
+    "listingUrl": "https://hooli.xyz/careers",
+    "contactName": "Gavin Belson",
+    "contactEmail": "gavin.b@hooli.xyz"
+  },
+  {
+    "uid": "def",
+    "companyName": "Pied Piper",
+    "status": "prospect",
+    "jobTitle": "Front-End Developer",
+    "companyWebsite": "https://pied-piper.io",
+    "listingUrl": "https://pied-piper.io/careers",
+    "contactName": "Richard Hendrix",
+    "contactEmail": "richard.hendrix@pied-piper.io"
+  },
+  {
+    "uid": "ghi",
+    "companyName": "Pied Piper",
+    "status": "prospect",
+    "jobTitle": "Front-End Developer",
+    "companyWebsite": "https://pied-piper.io",
+    "listingUrl": "https://pied-piper.io/careers",
+    "contactName": "Richard Hendrix",
+    "contactEmail": "richard.hendrix@pied-piper.io"
+  }
+]

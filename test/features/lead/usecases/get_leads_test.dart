@@ -18,9 +18,9 @@ void main() {
   });
 
   final tLeads = [
-    Lead(id: 1, companyName: 'Hooli'),
-    Lead(id: 2, companyName: 'Pied Piper'),
-    Lead(id: 3, companyName: 'Aviato'),
+    Lead(uid: 'abc', companyName: 'Hooli'),
+    Lead(uid: 'def', companyName: 'Pied Piper'),
+    Lead(uid: 'ghi', companyName: 'Aviato'),
   ];
 
   test('should get all leads from the repository', () async {
