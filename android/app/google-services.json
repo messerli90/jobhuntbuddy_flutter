@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "455609997246",
+    "firebase_url": "https://job-hunt-buddy.firebaseio.com",
+    "project_id": "job-hunt-buddy",
+    "storage_bucket": "job-hunt-buddy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455609997246:android:0889fd779c4d062c670bef",
+        "android_client_info": {
+          "package_name": "xyz.messerli.jobhuntbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455609997246-32lm81ajemj3p5pshdcqbf1162heepga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xyz.messerli.jobhuntbuddy",
+            "certificate_hash": "4b5332ba6e891bd50888dd6f1f1d3367fbf4edba"
+          }
+        },
+        {
+          "client_id": "455609997246-dabi2u55f3as5p7bbfup1e1e0bdm6dkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1MldEUFT0Csh-UQdWLtNFxHXjPvNMFkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455609997246-dabi2u55f3as5p7bbfup1e1e0bdm6dkg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "455609997246-qh00aemgrsmd2l5774e6n812qkj5aptu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "xyz.messerli.jobhuntbuddy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
