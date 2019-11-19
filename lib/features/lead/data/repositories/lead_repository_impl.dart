@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:jobhuntbuddy/core/error/exceptions.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../core/error/failures.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/lead.dart';
 import '../../domain/repositories/lead_repository.dart';
 import '../datasources/lead_remote_datasource.dart';
@@ -17,14 +18,24 @@ class LeadRepositoryImpl implements LeadRepository {
   });
 
   @override
-  Future<Either<Failure, Lead>> getLeadFromId(String uid) {
-    // TODO: implement getLeadFromId
-    return null;
+  Future<Either<Failure, Lead>> getLeadFromId(String uid) async {
+    networkInfo.isConnected;
+    try {
+      final lead = await remoteDataSource.getLeadFromId(uid);
+      return Right(lead);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
   }
 
   @override
-  Future<Either<Failure, List<Lead>>> getLeads() {
-    // TODO: implement getLeads
-    return null;
+  Future<Either<Failure, List<Lead>>> getLeads() async {
+    networkInfo.isConnected;
+    try {
+      final leads = await remoteDataSource.getLeads();
+      return Right(leads);
+    } on ServerException {
+      return Left(ServerFailure());
+    }
   }
 }
