@@ -10,6 +10,6 @@ class LeadBloc extends Bloc<LeadEvent, LeadState> {
   Stream<LeadState> mapEventToState(
     LeadEvent event,
   ) async* {
-    // TODO: Add Logic
+    // tod o Add Logic
   }
 }
