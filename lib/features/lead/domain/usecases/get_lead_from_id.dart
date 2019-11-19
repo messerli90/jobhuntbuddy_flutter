@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:jobhuntbuddy/core/usecases/usecase.dart';
 import 'package:meta/meta.dart';
 
-import '../../../core/error/failures.dart';
+import '../../../../core/error/failures.dart';
 import '../entities/lead.dart';
 import '../repositories/lead_repository.dart';
 

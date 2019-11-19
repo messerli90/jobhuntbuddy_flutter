@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:jobhuntbuddy/core/usecases/usecase.dart';
-import 'package:jobhuntbuddy/lead/domain/entities/lead.dart';
-import 'package:jobhuntbuddy/lead/domain/repositories/lead_repository.dart';
-import 'package:jobhuntbuddy/lead/domain/usecases/get_leads.dart';
+import 'package:jobhuntbuddy/features/lead/domain/entities/lead.dart';
+import 'package:jobhuntbuddy/features/lead/domain/repositories/lead_repository.dart';
+import 'package:jobhuntbuddy/features/lead/domain/usecases/get_leads.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
