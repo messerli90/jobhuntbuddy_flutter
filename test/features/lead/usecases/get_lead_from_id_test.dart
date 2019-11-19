@@ -16,13 +16,13 @@ void main() {
     usecase = GetLeadFromId(mockLeadRepository);
   });
 
-  final tId = 1;
+  final tId = 'abc';
   final tLead = Lead(uid: 'abc', companyName: 'Hooli');
 
   test('should get leads by ID from the repository', () async {
     when(mockLeadRepository.getLeadFromId(any))
         .thenAnswer((_) async => Right(tLead));
-    final result = await usecase(Params(id: tId));
+    final result = await usecase(Params(uid: tId));
 
     expect(result, Right(tLead));
     verify(mockLeadRepository.getLeadFromId(tId));

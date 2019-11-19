@@ -14,12 +14,12 @@ class GetLeadFromId implements UseCase<Lead, Params> {
 
   @override
   Future<Either<Failure, Lead>> call(Params params) async {
-    return await repository.getLeadFromId(params.id);
+    return await repository.getLeadFromId(params.uid);
   }
 }
 
 class Params extends Equatable {
-  final int id;
+  final String uid;
 
-  Params({ @required this.id }) : super([id]);
+  Params({@required this.uid}) : super([id]);
 }
