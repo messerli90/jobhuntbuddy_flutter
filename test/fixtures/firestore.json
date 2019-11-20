@@ -1,0 +1,59 @@
+{
+  "leads": {
+    "abc": {
+      "companyName": "Hooli",
+      "status": "application-sent",
+      "jobTitle": "Sr. Life Coach",
+      "companyWebsite": "https://hooli.xyz",
+      "listingUrl": "https://hooli.xyz/careers",
+      "contactName": "Gavin Belson",
+      "contactEmail": "gavin.b@hooli.xyz"
+    },
+    "def": {
+      "companyName": "Pied Piper",
+      "status": "prospect",
+      "jobTitle": "Front-End Developer",
+      "companyWebsite": "https://pied-piper.io",
+      "listingUrl": "https://pied-piper.io/careers",
+      "contactName": "Richard Hendrix",
+      "contactEmail": "richard.hendrix@pied-piper.io"
+    },
+    "ghi": {
+      "companyName": "Pied Piper",
+      "status": "prospect",
+      "jobTitle": "Front-End Developer",
+      "companyWebsite": "https://pied-piper.io",
+      "listingUrl": "https://pied-piper.io/careers",
+      "contactName": "Richard Hendrix",
+      "contactEmail": "richard.hendrix@pied-piper.io"
+    }
+  },
+  "projects": {
+    "1": {
+      "id": "1",
+      "$": "Project",
+      "title": "test title",
+      "description": "description",
+      "contributors": [
+        "2"
+      ],
+      "creatorProfileId": "3",
+      "state": "INCOMPLETE"
+    },
+    "__where__": {
+      "id == 1": {
+        "1": {
+          "id": "1",
+          "$": "Project",
+          "title": "test title",
+          "description": "description",
+          "contributors": [
+            "2"
+          ],
+          "creatorProfileId": "3",
+          "state": "INCOMPLETE"
+        }
+      }
+    }
+  }
+}
