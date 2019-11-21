@@ -23,7 +23,7 @@ class LeadModel extends Lead {
     this.contactName,
     this.contactEmail,
     this.notes,
-  }) : super(uid: uid, companyName: companyName);
+  });
 
   factory LeadModel.fromJson(Map<String, dynamic> json) {
     return LeadModel(
@@ -52,4 +52,7 @@ class LeadModel extends Lead {
       'notes': notes,
     };
   }
+
+  @override
+  List<Object> get props => [uid, companyName];
 }

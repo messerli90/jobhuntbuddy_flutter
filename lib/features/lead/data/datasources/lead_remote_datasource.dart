@@ -14,21 +14,21 @@ abstract class LeadRemoteDataSource {
   Future<List<LeadModel>> getLeads();
 }
 
-class LeadRemoteDataSourceImpl implements LeadRemoteDataSource {
+class LeadFirestoreDatasource implements LeadRemoteDataSource {
   final Firestore firestore;
 
-  LeadRemoteDataSourceImpl({ @required this.firestore });
+  LeadFirestoreDatasource({ @required this.firestore });
   
   @override
   Future<LeadModel> getLeadFromId(String uid) async {
-    final DocumentReference ref = firestore.document('leads/$uid');
+    final DocumentReference ref = firestore.document('test/$uid');
     final DocumentSnapshot snap = await ref.get();
     return LeadModel.fromJson(snap.data);
   }
 
   @override
   Future<List<LeadModel>> getLeads() async {
-    final CollectionReference ref = firestore.collection('leads');
+    final CollectionReference ref = firestore.collection('test');
     final QuerySnapshot snap = await  ref.getDocuments();
     List<LeadModel> leads;
     snap.documents.map((doc) {

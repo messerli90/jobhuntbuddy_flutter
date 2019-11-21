@@ -21,5 +21,8 @@ class GetLeadFromId implements UseCase<Lead, Params> {
 class Params extends Equatable {
   final String uid;
 
-  Params({@required this.uid}) : super([id]);
+  Params({@required this.uid});
+
+  @override
+  List<Object> get props => [id];
 }

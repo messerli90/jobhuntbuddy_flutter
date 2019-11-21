@@ -22,8 +22,8 @@ class Lead extends Equatable {
     this.contactName,
     this.contactEmail,
     this.notes,
-  }) : super([
-          uid,
-          companyName
-        ]);
+  });
+
+  @override
+  List<Object> get props => [uid, companyName];
 }
