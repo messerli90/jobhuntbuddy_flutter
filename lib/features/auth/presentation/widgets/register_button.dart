@@ -11,8 +11,9 @@ class RegisterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(8.0),
       ),
+      padding: EdgeInsets.all(12.0),
       onPressed: _onPressed,
       child: Text('Register'),
     );

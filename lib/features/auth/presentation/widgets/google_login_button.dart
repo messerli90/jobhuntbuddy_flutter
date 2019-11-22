@@ -9,9 +9,12 @@ class GoogleLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton.icon(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(8.0),
       ),
-      icon: Icon(FontAwesomeIcons.google, color: Colors.white),
+      icon: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Icon(FontAwesomeIcons.google, color: Colors.white, size: 16.0,),
+      ),
       onPressed: () {
         BlocProvider.of<LoginBloc>(context).add(
           LoginWithGooglePressed(),

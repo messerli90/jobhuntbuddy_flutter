@@ -88,8 +88,44 @@ class _LoginFormState extends State<LoginForm> {
               child: ListView(
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    child: Image.asset('assets/flutter_logo.png', height: 200),
+                    padding: EdgeInsets.only(top: 120.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Job',
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          'Hunt',
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        Text(
+                          'Buddy',
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0, bottom: 80.0),
+                    child: Text(
+                      'Track your job applications',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                          fontSize: 16.0,
+                          color: Colors.grey[300]),
+                    ),
                   ),
                   TextFormField(
                     controller: _emailController,
@@ -127,6 +163,16 @@ class _LoginFormState extends State<LoginForm> {
                               : null,
                         ),
                         GoogleLoginButton(),
+                        Padding(
+                          padding: EdgeInsets.only(top: 40.0),
+                          child: Text(
+                            'Don\'t have an account?',
+                            style: TextStyle(
+                              color: Colors.grey[300],
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                         CreateAccountButton(userRepository: _userRepository),
                       ],
                     ),

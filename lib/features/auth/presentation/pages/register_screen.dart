@@ -32,8 +32,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       appBar: AppBar(title: Text('Register')),
       body: Center(
-        child: BlocProvider.value(
-          value: _registerBloc,
+        child: BlocProvider<RegisterBloc>(
+          builder: (BuildContext context) => _registerBloc,
           child: RegisterForm(),
         ),
       ),

@@ -30,9 +30,11 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: BlocProvider.value(
-        value: _loginBloc,
-        child: LoginForm(userRepository: _userRepository),
+      child: BlocProvider<LoginBloc>(
+        builder: (BuildContext context) => _loginBloc,
+        child: Scaffold(
+          body: LoginForm(userRepository: _userRepository),
+        ),
       ),
     );
   }
