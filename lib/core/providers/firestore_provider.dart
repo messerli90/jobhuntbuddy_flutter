@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreProvider {
-  Firestore _firestore = Firestore.instance;
-
-  
+  // Firestore _firestore;
 }

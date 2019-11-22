@@ -21,6 +21,10 @@ void main() {
     bloc = LeadBloc(getLeads: mockGetLeads, getLeadFromId: mockGetLeadFromId);
   });
 
+  tearDown(() {
+    bloc.close();
+  });
+
   test('initialState should be InitialLeadState', () {
     expect(bloc.initialState, equals(InitialLeadState()));
   });
