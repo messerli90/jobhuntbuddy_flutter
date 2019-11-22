@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobhuntbuddy/features/auth/data/repositories/user_repository.dart';
+
+import '../../data/repositories/user_repository.dart';
+import '../pages/register_screen.dart';
 
 class CreateAccountButton extends StatelessWidget {
   final UserRepository _userRepository;
