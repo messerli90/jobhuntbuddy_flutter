@@ -1,4 +1,4 @@
-package com.example.jobhuntbuddy
+package xyz.messerli.jobhuntbuddy
 
 import android.os.Bundle
 
