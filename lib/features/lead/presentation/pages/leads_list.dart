@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobhuntbuddy/features/auth/presentation/bloc/bloc.dart';
+
+import '../../../auth/presentation/bloc/auth/bloc.dart';
 
 class LeadsListPage extends StatelessWidget {
   const LeadsListPage({Key key}) : super(key: key);

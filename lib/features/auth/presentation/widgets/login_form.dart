@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/repositories/user_repository.dart';
-import '../bloc/bloc.dart';
-import '../bloc/login_bloc.dart';
+import '../bloc/auth/bloc.dart';
+import '../bloc/login/bloc.dart';
 import 'create_account_button.dart';
 import 'google_login_button.dart';
 import 'login_button.dart';

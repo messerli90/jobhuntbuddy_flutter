@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobhuntbuddy/features/lead/presentation/pages/leads_list.dart';
 
 import 'features/auth/data/repositories/user_repository.dart';
-import 'features/auth/presentation/bloc/bloc.dart';
+import 'features/auth/presentation/bloc/auth/bloc.dart';
+import 'features/lead/presentation/pages/leads_list.dart';
 import 'view/pages/splash_screen.dart';
 
 class App extends StatefulWidget {

@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 import './bloc.dart';
-import '../../data/repositories/user_repository.dart';
+import '../../../data/repositories/user_repository.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserRepository _userRepository;

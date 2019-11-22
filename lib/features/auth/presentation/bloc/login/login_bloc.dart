@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:jobhuntbuddy/core/util/validators.dart';
 import 'package:meta/meta.dart';
-// import 'package:rxdart/rxdart.dart';
 
 import './bloc.dart';
-import '../../data/repositories/user_repository.dart';
+import '../../../../../core/util/validators.dart';
+import '../../../data/repositories/user_repository.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   UserRepository _userRepository;

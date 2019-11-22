@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/repositories/user_repository.dart';
-import '../bloc/login_bloc.dart';
+import '../bloc/login/bloc.dart';
 import '../widgets/login_form.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -24,9 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    _loginBloc = LoginBloc(
-      userRepository: _userRepository
-    );
+    _loginBloc = LoginBloc(userRepository: _userRepository);
   }
 
   @override
