@@ -1,35 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../injection_container.dart';
 import '../bloc/bloc.dart';
 import '../bloc/lead_bloc.dart';
-import '../widgets/leads_list.dart';
+import '../widgets/lead_item.dart';
 
 class LeadsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<LeadBloc>(
-      builder: (BuildContext context) => sl<LeadBloc>(),
-      child: BlocBuilder<LeadBloc, LeadState>(
-        builder: (
-          BuildContext context,
-          LeadState state,
-        ) {
-          if (state is Loading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          } else if (state is Loaded) {
-            final leads = state.leads;
-            return LeadsList(leads: leads);
-          } else {
-            return Center(
-              child: Text('Else'),
-            );
-          }
-        },
-      ),
+    return BlocBuilder<LeadBloc, LeadState>(
+      builder: (context, state) {
+        if (state is LeadsLoading) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else if (state is LeadsLoaded) {
+          final leads = state.leads;
+          return ListView.builder(
+            itemCount: leads.length,
+            itemBuilder: (context, index) {
+              final lead = leads[index];
+              debugPrint('${lead.toString()} leads loaded');
+              return LeadItem(
+                lead: lead,
+                onTap: () async {
+                  // do something
+                }
+              );
+            },
+          );
+        } else {
+          return Center(child: Text('Error'));
+        }
+      },
     );
   }
 }

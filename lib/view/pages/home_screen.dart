@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobhuntbuddy/features/auth/presentation/pages/profile_screen.dart';
 
-import '../../features/auth/presentation/bloc/auth/bloc.dart';
 import '../../features/lead/presentation/pages/leads_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,13 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
   ];
 
-  Widget getBody() {
+  Widget _getBody() {
     switch (_selectedBottomNavIndex) {
       case 0:
         return LeadsScreen();
         break;
       case 1:
-        return ProfileScreen();
+        return Text('Hello');
         break;
       default:
         return LeadsScreen();
@@ -52,16 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('JobHuntBuddy'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.exit_to_app),
-            onPressed: () {
-              BlocProvider.of<AuthBloc>(context).add(LoggedOut());
-            },
-          )
-        ],
       ),
-      body: getBody(),
+      body: _getBody(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedBottomNavIndex,
         onTap: _onBottomNavTapped,

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:meta/meta.dart';
 
 import '../../domain/entities/lead.dart';
@@ -39,6 +40,20 @@ class LeadModel extends Lead {
     );
   }
 
+  factory LeadModel.fromSnapshot(DocumentSnapshot snap) {
+    return LeadModel(
+      uid: snap.documentID,
+      companyName: snap['companyName'] ?? '',
+      status: snap['status'] ?? '',
+      jobTitle: snap['jobTitle'] ?? '',
+      companyWebsite: snap['companyWebsite'] ?? '',
+      listingUrl: snap['listingUrl'] ?? '',
+      contactName: snap['contactName'] ?? '',
+      contactEmail: snap['contactEmail'] ?? '',
+      notes: snap['notes'] ?? '',
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'uid': uid,
@@ -51,6 +66,11 @@ class LeadModel extends Lead {
       'contactEmail': contactEmail,
       'notes': notes,
     };
+  }
+
+  @override
+  String toString() {
+    return 'LeadModel { uid: $uid, companyName: $companyName, status: $status, jobTitle: $jobTitle }';
   }
 
   @override

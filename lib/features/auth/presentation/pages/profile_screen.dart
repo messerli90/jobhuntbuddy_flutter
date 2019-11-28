@@ -5,10 +5,12 @@ import '../../data/models/user_model.dart';
 import '../bloc/auth/bloc.dart';
 
 class ProfileScreen extends StatelessWidget {
-  // final UserModel user;
-  const ProfileScreen({Key key}) : super(key: key);
+  final UserModel user;
+  const ProfileScreen({Key key, this.user})
+      : assert(user != null),
+        super(key: key);
 
-  Widget _userName(UserModel user) {
+  Widget _userName() {
     return Text(user.email);
   }
 
@@ -24,17 +26,15 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        if (state is Authenticated) {
-          return Column(
-            children: <Widget>[
-              _userName(state.user),
-              _logoutBtn(context),
-            ],
-          );
-        }
-      },
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          _userName(),
+          _logoutBtn(context),
+        ],
+      ),
     );
   }
 }

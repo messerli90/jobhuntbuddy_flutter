@@ -1,9 +1,11 @@
-import 'package:dartz/dartz.dart';
-
-import '../../../../core/error/failures.dart';
-import '../entities/lead.dart';
+import '../../data/models/lead_model.dart';
 
 abstract class LeadRepository {
-  Future<Either<Failure, Lead>> getLeadFromId(String uid);
-  Future<Either<Failure, List<Lead>>> getLeads();
+  Future<void> addNewLead(LeadModel lead);
+
+  Future<void> deleteLead(LeadModel lead);
+
+  Stream<List<LeadModel>> leads();
+
+  Future<void> updateLead(LeadModel lead);
 }

@@ -1,36 +1,23 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
 
-import '../../domain/entities/lead.dart';
+import '../../data/models/lead_model.dart';
 
 abstract class LeadState extends Equatable {
-  LeadState([List props = const <dynamic>[]]);
-}
+  const LeadState();
 
-class InitialLeadState extends LeadState {
   @override
   List<Object> get props => [];
 }
 
-class Loading extends LeadState {
-  @override
-  List<Object> get props => null;
-}
+class LeadsLoading extends LeadState {}
 
-class Loaded extends LeadState {
-  final List<Lead> leads;
+class LeadsLoaded extends LeadState {
+  final List<LeadModel> leads;
 
-  Loaded({@required this.leads});
+  const LeadsLoaded([this.leads = const []]);
 
-  @override
+  @override 
   List<Object> get props => [leads];
 }
 
-class Error extends LeadState {
-  final String message;
-
-  Error({@required this.message});
-
-  @override
-  List<Object> get props => [message];
-}
+class LeadsNotLoaded extends LeadState {}
