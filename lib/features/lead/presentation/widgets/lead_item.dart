@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobhuntbuddy/features/lead/data/models/lead_model.dart';
+
+import '../../data/models/lead_model.dart';
+import 'status_badge.dart';
 
 class LeadItem extends StatelessWidget {
   final LeadModel lead;
@@ -33,6 +35,7 @@ class LeadItem extends StatelessWidget {
               style: Theme.of(context).textTheme.subhead,
             )
           : null,
+      trailing: StatusBadge(status: lead.status,),
     );
   }
 }
