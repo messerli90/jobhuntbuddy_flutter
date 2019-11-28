@@ -2,40 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../injection_container.dart';
+import '../bloc/bloc.dart';
 import '../bloc/lead_bloc.dart';
+import '../widgets/leads_list.dart';
 
-class LeadsListPage extends StatefulWidget {
-  const LeadsListPage({Key key}) : super(key: key);
-
-  @override
-  _LeadsListPageState createState() => _LeadsListPageState();
-}
-
-class _LeadsListPageState extends State<LeadsListPage> {
-  // LeadBloc _leadBloc;
-  // LeadRepositoryImpl get _leadRepository => widget._leadRepository;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _leadBloc = LeadBloc(leadRepositoryImpl: _leadRepository);
-  // }
-
+class LeadsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: BlocProvider<LeadBloc>(
-        builder: (BuildContext context) => sl<LeadBloc>(),
-        child: Scaffold(
-          body: Center(child: Text('Leads')),
-        ),
+    return BlocProvider<LeadBloc>(
+      builder: (BuildContext context) => sl<LeadBloc>(),
+      child: BlocBuilder<LeadBloc, LeadState>(
+        builder: (
+          BuildContext context,
+          LeadState state,
+        ) {
+          if (state is Loading) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (state is Loaded) {
+            final leads = state.leads;
+            return LeadsList(leads: leads);
+          } else {
+            return Center(
+              child: Text('Else'),
+            );
+          }
+        },
       ),
     );
   }
-
-  // @override
-  // void dispose() {
-  //   _leadBloc.close();
-  //   super.dispose();
-  // }
 }

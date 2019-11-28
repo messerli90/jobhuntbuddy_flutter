@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:jobhuntbuddy/core/error/exceptions.dart';
 import 'package:meta/meta.dart';
 
+import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/network/network_info.dart';
 import '../../domain/entities/lead.dart';
 import '../../domain/repositories/lead_repository.dart';
-import '../datasources/lead_remote_datasource.dart';
+import '../datasources/lead_firestore_datasource.dart';
 
 class LeadRepositoryImpl implements LeadRepository {
-  final LeadRemoteDataSource remoteDataSource;
+  final LeadDataSource remoteDataSource;
   final NetworkInfo networkInfo;
 
   LeadRepositoryImpl({

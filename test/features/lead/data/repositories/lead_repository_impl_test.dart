@@ -2,14 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:jobhuntbuddy/core/error/exceptions.dart';
 import 'package:jobhuntbuddy/core/error/failures.dart';
 import 'package:jobhuntbuddy/core/network/network_info.dart';
-import 'package:jobhuntbuddy/features/lead/data/datasources/lead_remote_datasource.dart';
+import 'package:jobhuntbuddy/features/lead/data/datasources/lead_firestore_datasource.dart';
 import 'package:jobhuntbuddy/features/lead/data/models/lead_model.dart';
 import 'package:jobhuntbuddy/features/lead/data/repositories/lead_repository_impl.dart';
 import 'package:jobhuntbuddy/features/lead/domain/entities/lead.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-class MockRemoteDataSource extends Mock implements LeadRemoteDataSource {}
+class MockRemoteDataSource extends Mock implements LeadDataSource {}
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 

@@ -3,7 +3,7 @@ import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 
 import 'core/network/network_info.dart';
-import 'features/lead/data/datasources/lead_remote_datasource.dart';
+import 'features/lead/data/datasources/lead_firestore_datasource.dart';
 import 'features/lead/data/repositories/lead_repository_impl.dart';
 import 'features/lead/domain/repositories/lead_repository.dart';
 import 'features/lead/domain/usecases/get_leads.dart';
@@ -15,7 +15,7 @@ Future<void> init() async {
   //! Features - Leads
   // Bloc
   sl.registerFactory(
-    () => LeadBloc(leadRepositoryImpl: sl()),
+    () => LeadBloc(repository: sl()),
   );
   sl.registerLazySingleton(() => GetLeads(sl()));
 
@@ -28,8 +28,8 @@ Future<void> init() async {
   );
 
   // Data sources
-  sl.registerLazySingleton<LeadRemoteDataSource>(
-    () => LeadFirestoreDatasource(firestore: sl()),
+  sl.registerLazySingleton<LeadDataSource>(
+    () => LeadFirestoreDatasource(),
   );
 
   //! Core
