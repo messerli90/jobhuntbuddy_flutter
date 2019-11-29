@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobhuntbuddy/features/lead/data/models/lead_model.dart';
 
 import '../bloc/bloc.dart';
 import '../bloc/lead_bloc.dart';
@@ -21,11 +22,17 @@ class LeadsScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final lead = leads[index];
               debugPrint('${lead.toString()} leads loaded');
-              return LeadItem(
-                lead: lead,
-                onTap: () async {
-                  // do something
-                }
+              return Card(
+                child: LeadItem(
+                  lead: lead,
+                  onTap: () async {
+                    debugPrint('Clicked ${lead.uid}');
+                    // navigate to lead
+                  },
+                  onLongPress: () async {
+                    debugPrint('long press');
+                  },
+                ),
               );
             },
           );

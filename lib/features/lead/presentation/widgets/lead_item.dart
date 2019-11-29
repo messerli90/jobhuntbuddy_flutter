@@ -6,17 +6,20 @@ import 'status_badge.dart';
 class LeadItem extends StatelessWidget {
   final LeadModel lead;
   final GestureTapCallback onTap;
+  final GestureLongPressCallback onLongPress;
 
   const LeadItem({
     Key key,
     @required this.lead,
     @required this.onTap,
+    @required this.onLongPress,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
+      onLongPress: onLongPress,
       title: Hero(
         tag: '${lead.uid}__heroTag',
         child: Container(
@@ -32,10 +35,14 @@ class LeadItem extends StatelessWidget {
               lead.jobTitle,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.subhead,
+              style: TextStyle(
+                color: Color(Colors.grey[700].value)
+              )
             )
           : null,
-      trailing: StatusBadge(status: lead.status,),
+      trailing: StatusBadge(
+        status: lead.status,
+      ),
     );
   }
 }

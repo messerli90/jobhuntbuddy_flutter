@@ -3,6 +3,7 @@ import 'package:meta/meta.dart';
 
 import '../../domain/entities/lead.dart';
 
+@immutable
 class LeadModel extends Lead {
   final String uid;
   final String companyName;
@@ -51,6 +52,31 @@ class LeadModel extends Lead {
       contactName: snap['contactName'] ?? '',
       contactEmail: snap['contactEmail'] ?? '',
       notes: snap['notes'] ?? '',
+    );
+  }
+
+  // Used to update a single or multiple attribute
+  LeadModel copyWith({
+    String uid,
+    String companyName,
+    String status,
+    String jobTitle,
+    String companyWebsite,
+    String listingUrl,
+    String contactName,
+    String contactEmail,
+    String notes,
+  }) {
+    return LeadModel(
+      uid: uid ?? this.uid,
+      companyName: companyName ?? this.companyName,
+      status: status ?? this.status,
+      jobTitle: jobTitle ?? this.jobTitle,
+      companyWebsite: companyWebsite ?? this.companyWebsite,
+      listingUrl: listingUrl ?? this.listingUrl,
+      contactName: contactName ?? this.contactName,
+      contactEmail: contactEmail ?? this.contactEmail,
+      notes: notes ?? this.notes,
     );
   }
 

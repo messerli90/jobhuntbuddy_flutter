@@ -24,6 +24,16 @@ class _AppState extends State<App> {
     _authBloc = AuthBloc(userRepository: _userRepository);
   }
 
+  ThemeData _themeData = ThemeData(
+    primarySwatch: Colors.blueGrey,
+
+    // backgroundColor: Color(Colors.grey[200].value),
+    // bottomAppBarColor: Color(Colors.grey[400].value),
+    // appBarTheme: AppBarTheme(
+    //   color: Color(Colors.grey[400].value)
+    // )
+  );
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -42,6 +52,7 @@ class _AppState extends State<App> {
       child: MaterialApp(
         title: 'JobHuntBuddy',
         debugShowCheckedModeBanner: false,
+        theme: _themeData,
         routes: {
           '/': (context) {
             return BlocBuilder<AuthBloc, AuthState>(

@@ -13,17 +13,29 @@ class StatusBadge extends StatelessWidget {
         case 'application-sent':
           return Text(
             'Application Sent',
-            style: TextStyle(color: Color.fromRGBO(39, 103, 73, 1)),
+            // style: TextStyle(color: Color.fromRGBO(39, 103, 73, 1)),
+            style: TextStyle(
+              color: Colors.green[500],
+              fontWeight: FontWeight.bold,
+            ),
           );
         case 'interview-set':
           return Text(
             'Interview Set',
-            style: TextStyle(color: Color.fromRGBO(44, 82, 130, 1)),
+            // style: TextStyle(color: Color.fromRGBO(44, 82, 130, 1)),
+            style: TextStyle(
+              color: Colors.blue[600],
+              fontWeight: FontWeight.bold,
+            ),
           );
         default:
           return Text(
             'Just a Prospect',
-            style: TextStyle(color: Color.fromRGBO(151, 90, 22, 1)),
+            // style: TextStyle(color: Color.fromRGBO(151, 90, 22, 1)),
+            style: TextStyle(
+              color: Colors.yellow[800],
+              fontWeight: FontWeight.bold,
+            ),
           );
       }
     }
@@ -39,9 +51,11 @@ class StatusBadge extends StatelessWidget {
       }
     }
 
-    return Chip(
-      label: getTitle(),
-      backgroundColor: getBackgroundColor(),
-    );
+    // return Chip(
+    //   label: getTitle(),
+    //   backgroundColor: getBackgroundColor(),
+    // );
+
+    return getTitle();
   }
 }

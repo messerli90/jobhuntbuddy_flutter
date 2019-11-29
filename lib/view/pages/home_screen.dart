@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: _onBottomNavTapped,
         items: _bottomNavList,
       ),
+      backgroundColor: Colors.blueGrey[100],
     );
   }
 }
