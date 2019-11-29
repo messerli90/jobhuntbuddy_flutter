@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobhuntbuddy/features/lead/data/models/lead_model.dart';
 
 import '../bloc/bloc.dart';
 import '../bloc/lead_bloc.dart';

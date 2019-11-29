@@ -51,11 +51,11 @@ class StatusBadge extends StatelessWidget {
       }
     }
 
-    // return Chip(
-    //   label: getTitle(),
-    //   backgroundColor: getBackgroundColor(),
-    // );
+    return Chip(
+      label: getTitle(),
+      backgroundColor: getBackgroundColor(),
+    );
 
-    return getTitle();
+    // return getTitle();
   }
 }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobhuntbuddy/features/lead/presentation/bloc/bloc.dart';
-import 'package:jobhuntbuddy/features/lead/presentation/bloc/lead_bloc.dart';
-import 'package:jobhuntbuddy/injection_container.dart';
 
 import 'features/auth/data/repositories/user_repository.dart';
 import 'features/auth/presentation/bloc/auth/bloc.dart';
 import 'features/auth/presentation/pages/login_screen.dart';
+import 'features/lead/domain/repositories/lead_repository.dart';
+import 'features/lead/presentation/bloc/bloc.dart';
+import 'features/lead/presentation/bloc/lead_bloc.dart';
+import 'injection_container.dart';
 import 'view/pages/home_screen.dart';
 import 'view/pages/splash_screen.dart';
 
@@ -43,11 +44,6 @@ class _AppState extends State<App> {
             return _authBloc..add(AppStarted());
           },
         ),
-        BlocProvider<LeadBloc>(
-          create: (context) {
-            return sl<LeadBloc>()..add(LoadLeads());
-          },
-        )
       ],
       child: MaterialApp(
         title: 'JobHuntBuddy',
@@ -61,7 +57,16 @@ class _AppState extends State<App> {
                   return LoginScreen(userRepository: _userRepository);
                 }
                 if (state is Authenticated) {
-                  return HomeScreen();
+                  return BlocProvider<LeadBloc>(
+                    create: (context) {
+                      return LeadBloc(
+                          userId: state.user.uid,
+                          repository: sl<LeadRepository>())
+                        ..add(LoadLeads());
+                    },
+                    child: HomeScreen(),
+                  );
+                  // return HomeScreen();
                 }
                 return SplashScreen();
               },

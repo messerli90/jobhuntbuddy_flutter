@@ -33,7 +33,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       appBar: AppBar(title: Text('Register')),
       body: Center(
         child: BlocProvider<RegisterBloc>(
-          builder: (BuildContext context) => _registerBloc,
+          create: (BuildContext context) => _registerBloc,
           child: RegisterForm(),
         ),
       ),

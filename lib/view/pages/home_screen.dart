@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       title: Text('Leads'),
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.label),
+      icon: Icon(Icons.person),
       title: Text('Profile'),
     ),
   ];
