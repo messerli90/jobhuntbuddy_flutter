@@ -64,7 +64,9 @@ class _AppState extends State<App> {
                           repository: sl<LeadRepository>())
                         ..add(LoadLeads());
                     },
-                    child: HomeScreen(),
+                    child: HomeScreen(
+                      user: state.user,
+                    ),
                   );
                   // return HomeScreen();
                 }

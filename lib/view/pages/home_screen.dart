@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:jobhuntbuddy/features/auth/data/models/user_model.dart';
+import 'package:jobhuntbuddy/features/auth/presentation/pages/profile_screen.dart';
 
 import '../../features/lead/presentation/pages/leads_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+  final UserModel _user;
+  HomeScreen({Key key, @required user})
+      : _user = user,
+        super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -30,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
         return LeadsScreen();
         break;
       case 1:
-        return Text('Hello');
+        return ProfileScreen(
+          user: widget._user,
+        );
         break;
       default:
         return LeadsScreen();
